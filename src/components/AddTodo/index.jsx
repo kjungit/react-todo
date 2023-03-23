@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
 import styled from "styled-components";
 const Footer = styled.div`
   position: fixed;
@@ -13,7 +12,7 @@ const TodoInput = styled.input``;
 const InputButton = styled.button``;
 
 function AddTodo({ onAdd }) {
-  const { loading } = useSelector((state) => state.post);
+  // const { loading } = useSelector((state) => state.post);
 
   const [input, setInput] = useState("");
 

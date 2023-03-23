@@ -17,11 +17,12 @@ const TodoWrapper = styled.div`
 `;
 
 function TodoContainter() {
-  const { entities: todos, loading } = useSelector((state) => state.post);
+  const { entities: todos } = useSelector((state) => state.post);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getTodos());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const onAdd = (todoItem) => {
@@ -48,7 +49,7 @@ function TodoContainter() {
           />
         );
       })}
-      <AddTodo onAdd={onAdd} />
+      <AddTodo onAdd={onAdd} htmlFor="file" />
     </TodoWrapper>
   );
 }

@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice, current } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
 const initialState = {
@@ -46,6 +46,7 @@ export const deleteTodo = createAsyncThunk("todos/deleteTodo", async (id) => {
     `https://asia-northeast3-heropy-api.cloudfunctions.net/api/todos/${id}`,
     { headers }
   );
+  console.log(response);
   return { id };
 });
 
