@@ -60,7 +60,12 @@ function EditModal({ todo, onEdit, modalChange }) {
         {isHover ? <BsXSquareFill /> : <BsXSquare />}
       </Xsquare>
       <EditInput onChange={onChange} />
-      <ItemEditButton onClick={() => onEdit(todo.id, input, todo.done)}>
+      <ItemEditButton
+        onClick={() => {
+          onEdit({ id: todo.id, title: input, done: todo.done });
+          modalChange();
+        }}
+      >
         Edit
       </ItemEditButton>
     </ModalWrapper>
